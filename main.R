@@ -5,6 +5,7 @@ Route planner for heavy transport.
 """
 
 # Import packages
+library(base)
 library(downloader)
 library(rgdal)
 library(raster)
