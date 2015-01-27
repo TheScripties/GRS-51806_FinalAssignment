@@ -7,6 +7,7 @@ Route planner for heavy transport.
 # Import packages
 library(downloader)
 library(rgdal)
+library(raster)
 #library(Shiny)
 #library(rPython)
 
