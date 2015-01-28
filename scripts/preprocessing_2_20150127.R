@@ -101,6 +101,40 @@ processing <- function(placeStart, streetStart, placeDest, streetDest) {
   plot(coordsStart, add = TRUE, col = "red") ### plotten voor presentatie
   plot(coordsDest, add = TRUE, col = "orange") ### plotten voor presentatie
   
+  # save as shapefile TEMP, DELETE for final projct!
+  shapefile(infraClip, filename='infraClip.shp', overwrite = TRUE) ### DELETE this and comment above for final project!
+  # plot to check data
+  plot(infraClip) ### plotten voor presentatie
+  plot(coordsStart, add = TRUE, col = "red") ### plotten voor presentatie
+  plot(coordsDest, add = TRUE, col = "orange") ### plotten voor presentatie
   
+  ### Turn coordinates of SpatialLinesDataFrame into vertices
+  vertexPoints = c(X_Start, Y_Start)
+  for(i in 1:length(coordinates(infraClip))) { #i = 1 # --> for- loop met for(i in 1:length(coordinates(streetStartData)))
+    for(j in 1:length(coordinates(infraClip)[[i]])){ #j = 1 # --> altijd 1 --- for(j in 1:length(coordinates(streetStartData)[[45]]))
+      for(k in 1:length(coordinates(infraClip)[[i]][[j]][k,])){ #k = 1 # unclear -- for(k in 1:length(coordinates(streetStartData)[[45]][[1]]))
+        vertexPoints <- c(vertexPoints, coordinates(infraClip)[[i]][[j]][k,])
+      }
+    }
+  }
+  
+  ### back-up voor streetStartData
+  vertexPointsStart = c(X_Start, Y_Start)
+  for(i in 1:length(coordinates(streetStartData))) { #i = 1 # --> for- loop met for(i in 1:length(coordinates(streetStartData)))
+    for(j in 1:length(coordinates(streetStartData)[[i]])){ #j = 1 # --> altijd 1 --- for(j in 1:length(coordinates(streetStartData)[[45]]))
+      for(k in 1:length(coordinates(streetStartData)[[i]][[j]][k,])){ #k = 1 # unclear -- for(k in 1:length(coordinates(streetStartData)[[45]][[1]]))
+        vertexPointsStart <- c(vertexPointsStart, coordinates(streetStartData)[[i]][[j]][k,])
+      }
+    }
+  }
+  #vertexPointsStart$x ### To do
+  #names(vertexPointsStart) ### To do
   
 }
+
+#Names everywhere?
+#Add data folder to github
+#remove Dijkstras algorithm from scripts folder
+#Clean code
+#Comments
+#Create different functions
