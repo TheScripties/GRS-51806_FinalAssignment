@@ -8,7 +8,7 @@
 visualization <- function (navigatoR.coords, navigatoR.calculation) {
 
   # Plot map with start and destination coordinates -------------------------
-  plot(navigatoR.calculation$infraClip, main = "NavigatoR", xlab = "Longitude", ylab = "Latitude", cex = 2, col = "gray"(0.7))
+  plot(navigatoR.calculation$infraClip, main = "NavigatoR", xlab = "Longitude", ylab = "Latitude", cex = 2, col = "gray"(0.7), axes = TRUE)
   plot(navigatoR.coords$coordsStart, add = TRUE, col = "purple", lwd = 10)
   plot(navigatoR.coords$coordsDest, add = TRUE, col = "darkgreen", lwd = 10)
   box()
