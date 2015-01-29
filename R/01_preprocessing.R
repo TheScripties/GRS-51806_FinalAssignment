@@ -8,11 +8,7 @@
 
 # Preprocessing function --------------------------------------------------
 preprocessing <- function(placeStart, streetStart, placeDest, streetDest) {
-  placeStart <- placeStart
-  streetStart <- streetStart
-  placeDest <- placeDest
-  streetDest <- streetDest
-  
+
   # Reference to the data folder --------------------------------------------
   datdir <- "data"
   
