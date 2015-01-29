@@ -34,9 +34,9 @@ calculation <- function(navigatoR.coords) {
   }
 
   X_MinExtent <- X_Min - extentValue
-  Y_MinExtent <- Y_Min -  (2/3) * extentValue
+  Y_MinExtent <- Y_Min - (2/3) * extentValue
   X_MaxExtent <- X_Max + extentValue
-  Y_MaxExtent <- Y_Max +  (2/3) *  extentValue
+  Y_MaxExtent <- Y_Max + (2/3) *  extentValue
   Y_CoordsPlotText <- (5/12) * (Y_MaxExtent - Y_Max)
 
   # Define the extent of clipbox of the route
