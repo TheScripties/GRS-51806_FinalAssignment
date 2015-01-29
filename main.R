@@ -32,13 +32,13 @@ source('R/01_preprocessing.R')
 source('R/02_calculation.R')
 source('R/03_visualization.R')
 
-# Actual commands ---------------------------------------------------------
-navigatoR.coords <- preprocessing (placeStart, streetStart, placeDest, streetDest)
-navigatoR.calculation <- calculation (navigatoR.coords)
-visualization(navigatoR.coords, navigatoR.calculation)
-
 # Defaults for places and streets -----------------------------------------
 placeStart = "Rotterdam"
 streetStart = "Gordelweg"
 placeDest = "Capelle aan den IJssel"
 streetDest = "Slotlaan"
+
+# Actual commands ---------------------------------------------------------
+navigatoR.coords <- preprocessing (placeStart, streetStart, placeDest, streetDest)
+navigatoR.calculation <- calculation (navigatoR.coords)
+visualization(navigatoR.coords, navigatoR.calculation)
