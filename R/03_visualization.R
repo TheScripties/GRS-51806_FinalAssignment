@@ -18,7 +18,7 @@ visualization <- function (navigatoR.coords, navigatoR.calculation) {
   plot(navigatoR.coords$coordsDest, add = TRUE, col = "darkgreen", lwd = 10)
   box()
   grid()
-  scalebar(d = round(abs(navigatoR.calculation$startToDestKm)), type = "line", lwd = 3, below = "kilometer", col = "purple")
+  scalebar(d = round(abs(navigatoR.calculation$startToDestKm)), type = "line", lwd = 3, below = "kilometer", col = "black")
   legend("bottomright", legend = round(navigatoR.calculation$startToDestKm, digits = 3), title = "Distance (km)")
 
   # Add labels for start and destination point ------------------------------
@@ -33,6 +33,6 @@ visualization <- function (navigatoR.coords, navigatoR.calculation) {
   }
   
   # Plot KML in Google Earth ------------------------------------------------
-  plotKML(points, file.path("output", "NavigatoR.kml"), points_names = c("Start", "Destination"), shape = "http://maps.google.com/mapfiles/kml/pal2/icon15.png", open.kml = TRUE)
+  plotKML(points, folder.name = "output", file.name = "NavigatoR.kml", points_names = c("Start", "Destination"), shape = "http://maps.google.com/mapfiles/kml/pal2/icon15.png", open.kml = TRUE)
   #writeOGR(points, file.path("output", "navigator.kml"), "NavigatoR", driver = "KML", overwrite_layer = TRUE)
 }
