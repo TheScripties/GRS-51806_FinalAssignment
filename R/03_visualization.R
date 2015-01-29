@@ -4,6 +4,7 @@
 
 
 # Visualization function --------------------------------------------------
+# Alternative function when Google Earth is not installed, KML-file can be generated without using Google Earth
 visualization <- function (navigatoR.coords, navigatoR.calculation) {
 
   # Plot map with start and destination coordinates -------------------------
@@ -28,7 +29,6 @@ visualization <- function (navigatoR.coords, navigatoR.calculation) {
   
   # Plot KML in Google Earth ------------------------------------------------
   plotKML(points, file.path("output", "navigator.kml"), points_names = c("Start", "Destination"), shape = "http://maps.google.com/mapfiles/kml/pal2/icon15.png", open.kml = TRUE)
-  # Alternative for when Google Earth is not installed
   #writeOGR(points, file.path("output", "navigator.kml"), "NavigatoR", driver = "KML", overwrite_layer = TRUE)
 }
 
