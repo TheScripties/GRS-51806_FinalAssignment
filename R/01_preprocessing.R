@@ -1,6 +1,9 @@
-# Created on Thursday January 29 2015
-# Preprocessing function for route planner for heavy transport.
-# @authors: Michiel Blok and Madeleine van Winkel
+# Preprocessing function of the NavigatoR: getting start and destination coordinates from a start and destination city and street.
+# Authors: Michiel Blok and Madeleine van Winkel
+# Created on Monday January 26 2015
+## Description:
+## This function downloads, unzips and reads the necessary data (infrastructure and administrative boundaries) for the NavigatoR.
+## With this data, coordinates are created of the start and destination streets within the start and destination cities.
 
 
 # Preprocessing function --------------------------------------------------
