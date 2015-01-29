@@ -26,9 +26,9 @@ visualization <- function (navigatoR.coords, navigatoR.calculation) {
   text(navigatoR.coords$X_Dest, navigatoR.coords$Y_Dest + navigatoR.calculation$Y_CoordsPlotText, labels = "Destination", lwd = 35, col = "darkgreen")
 
   # Plot growing arrow on map -----------------------------------------------
-  for (i in 1:8) {
-    X_Temp <- navigatoR.coords$X_Start + ((i / 8) * (navigatoR.coords$X_Dest - navigatoR.coords$X_Start))
-    Y_Temp <- navigatoR.coords$Y_Start + ((i / 8) * (navigatoR.coords$Y_Dest - navigatoR.coords$Y_Start))
+  for (i in 1:10) {
+    X_Temp <- navigatoR.coords$X_Start + ((i / 10) * (navigatoR.coords$X_Dest - navigatoR.coords$X_Start))
+    Y_Temp <- navigatoR.coords$Y_Start + ((i / 10) * (navigatoR.coords$Y_Dest - navigatoR.coords$Y_Start))
     arrows(navigatoR.coords$X_Start, navigatoR.coords$Y_Start, X_Temp, Y_Temp, col = "blue", lwd = 4)
   }
   
