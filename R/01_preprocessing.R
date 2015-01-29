@@ -15,11 +15,11 @@ preprocessing <- function(placeStart, streetStart, placeDest, streetDest) {
   
   # Download and unzip the data ---------------------------------------------
   download(url = "http://download.geofabrik.de/europe/netherlands-latest.shp.zip" , destfile = "data/netherlands-latest.shp.zip", quiet = TRUE, method = "auto")
-  unzip(zipfile = "data/netherlands-latest.shp.zip", exdir = paste(datdir, ".", sep = "") , overwrite = TRUE)
+  unzip(zipfile = "data./netherlands-latest.shp.zip", exdir = paste(datdir, ".", sep = "") , overwrite = TRUE)
   GADM <- raster::getData("GADM", country = "NLD", level = 2, path = "data")
   
   # Read infrastructure data ------------------------------------------------
-  infra <- readOGR("data/roads.shp", layer = ogrListLayers("data/roads.shp"))
+  infra <- readOGR("data./roads.shp", layer = ogrListLayers("data./roads.shp"))
   
   # Get start and destination city data -------------------------------------
   placeStartData <- GADM[GADM$NAME_2 == placeStart,]
