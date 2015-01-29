@@ -13,7 +13,7 @@ preprocessing <- function(placeStart, streetStart, placeDest, streetDest) {
   datdir <- "data"
   
   # Download and unzip the data ---------------------------------------------
-  download(url = "http://download.geofabrik.de/europe/netherlands-latest.shp.zip" , destfile = "data/netherlands-latest.shp.zip", quiet = TRUE, method = "auto")
+  download(url = "http://download.geofabrik.de/europe/netherlands-latest.shp.zip" , destfile = "data./netherlands-latest.shp.zip", quiet = TRUE, method = "auto")
   unzip(zipfile = "data./netherlands-latest.shp.zip", exdir = paste(datdir, ".", sep = "") , overwrite = TRUE)
   GADM <- raster::getData("GADM", country = "NLD", level = 2, path = "data")
   
