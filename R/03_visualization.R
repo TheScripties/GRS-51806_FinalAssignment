@@ -1,6 +1,11 @@
-# Created on Thursday January 29 2015
-# Visualization function for route planner for heavy transport
-# @authors: Michiel Blok and Madeleine van Winkel
+# Visualization function of the NavigatoR: visualized the route from start to destination and creates an KML file.
+# Authors: Michiel Blok and Madeleine van Winkel
+# Created on Monday January 26 2015
+## Description:
+## A plot is made from the clipped routemap.
+## Using an iterative function, a growing arrow is added to show the route to take.
+## As addition, a KML-file is created that opens up in Google Earth.
+## An alternative of only creating an KML file and not opening it in Google Earth is added, for those who do not have Google Earth.
 
 
 # Visualization function --------------------------------------------------
