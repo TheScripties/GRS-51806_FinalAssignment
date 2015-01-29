@@ -1,6 +1,9 @@
-# Created on Thursday January 29 2015
-# Calculation function for route planner for heavy transport
-# @authors: Michiel Blok and Madeleine van Winkel
+# Calculation function of the NavigatoR: calculates the extent for the routemap and the distance between the start and destination coordinates.
+# Authors: Michiel Blok and Madeleine van Winkel
+# Created on Monday January 26 2015
+## Description:
+## The extent of the routemap is clipped to the start and destination coordinates.
+## The distance of the route from start to destination is calculated in meters.
 
 
 # Calculation function to calculate the extent and distance ---------------
