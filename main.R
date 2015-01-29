@@ -1,6 +1,12 @@
-# Created on Monday January 26 2015
-# Route planner for heavy transport
+# NavigatoR main script for calculating and plotting distance between 2 locations within the Netherlands.
 # Authors: Michiel Blok and Madeleine van Winkel
+# Created on Monday January 26 2015
+## Description:
+## This is the main script for the NavigatoR. 
+## This script will check whether packages need to be installed, and will install these packages if needed. It will also load the required packages.
+## Afterwards, the source functios are created and defaults are given to try out the script.
+## Finally, the functions that this programs exists of are called and runned.
+## The authors wish you a lot of fun with the NavigatoR!
 
 
 # Import packages ---------------------------------------------------------
