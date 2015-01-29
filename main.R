@@ -1,31 +1,44 @@
-"""
-Created on Mon January 26 2015
-Route planner for heavy transport.
-@authors: Michiel Blok and Madeleine van Winkel
-"""
+# Created on Monday January 26 2015
+# Route planner for heavy transport
+# Authors: Michiel Blok and Madeleine van Winkel
 
-# Import packages ### instal if needed
-if (!require(base)){print("base package is not installed. Installing it now.");install.packages(base, dependencies = TRUE)} # install base package
-if (!require(graphics)){print("graphics package is not installed. Installing it now.");install.packages(graphics, dependencies = TRUE)} # install graphics package
-if (!require(downloader)){print("downloader package is not installed. Installing it now.");install.packages(downloader, dependencies = TRUE)} # install downloader package
-if (!require(rgdal)){print("rgdal package is not installed. Installing it now.");install.packages(rgdal, dependencies = TRUE)} # install rgdal package
-if (!require(raster)){print("raster package is not installed. Installing it now.");install.packages(raster, dependencies = TRUE)} # install raster package
-if (!require(sp)){print("Sp package is not installed. Installing it now.");install.packages(sp, dependencies = TRUE)} # install sp package
-###if (!require(utils)){print("utils package is not installed. Installing it now.");install.packages(utils, dependencies = TRUE)} # install sp package # not used as of yet
 
+# Import packages ---------------------------------------------------------
+
+# Install packages if needed
+if (!require(utils)){print("utils package is not installed. Installing it now.");install.packages(utils, dependencies = TRUE)}
+if (!require(base)){print("base package is not installed. Installing it now.");install.packages(base, dependencies = TRUE)}
+if (!require(graphics)){print("graphics package is not installed. Installing it now.");install.packages(graphics, dependencies = TRUE)}
+if (!require(downloader)){print("downloader package is not installed. Installing it now.");install.packages(downloader, dependencies = TRUE)}
+if (!require(plotKML)){print("plotKML package is not installed. Installing it now.");install.packages(plotKML, dependencies = TRUE)}
+if (!require(raster)){print("raster package is not installed. Installing it now.");install.packages(raster, dependencies = TRUE)}
+if (!require(rgdal)){print("rgdal package is not installed. Installing it now.");install.packages(rgdal, dependencies = TRUE)}
+if (!require(rgeos)){print("geos package is not installed. Installing it now.");install.packages(rgeos, dependencies = TRUE)}
+if (!require(sp)){print("Sp package is not installed. Installing it now.");install.packages(sp, dependencies = TRUE)}
+
+# Load packages
+library(utils)
 library(base)
 library(downloader)
-library(graphics) # wss nodig voor plot
-library(rgdal)
+library(graphics)
+library(plotKML)
 library(raster)
+library(rgdal)
+library(rgeos)
 library(sp)
-###library(utils) # not used as of yet
 
-#library(Shiny)
-#library(rPython)
+# Source functions --------------------------------------------------------
+source('R/01_preprocessing.R')
+source('R/02_calculation.R')
+source('R/03_visualization.R')
 
-# Source functions
-source('scripts/preprocessing.R') ### error?!
+# Actual commands ---------------------------------------------------------
+navigatoR.coords <- preprocessing (placeStart, streetStart, placeDest, streetDest)
+navigatoR.calculation <- calculation (navigatoR.coords)
+visualization(navigatoR.coords, navigatoR.calculation)
 
-# Then the actual commands
-preprocessing()
+# Defaults for places and streets -----------------------------------------
+placeStart = "Rotterdam"
+streetStart = "Gordelweg"
+placeDest = "Capelle aan den IJssel"
+streetDest = "Slotlaan"
