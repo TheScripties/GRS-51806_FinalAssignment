@@ -12,15 +12,17 @@
   </h2>
 </p>
 
-<h5>
-  # 1 - NavigatoR
-  # 2 - Scripts
-  ## 2.a - Main Script (main.R)
-  ## 2.b - Preprocessing Script (R/01_preprocessing.R)
-  ## 2.c - Calculation Script (R/02_calculation.R)
-  ## 2.d - Visualization Script (R/03_visualization.R)
-  # 3 - Examples
-</h5>
+<p>
+  <h5>
+    # 1 - NavigatoR
+    # 2 - Scripts
+    ## 2.a - Main Script (main.R)
+    ## 2.b - Preprocessing Script (R/01_preprocessing.R)
+    ## 2.c - Calculation Script (R/02_calculation.R)
+    ## 2.d - Visualization Script (R/03_visualization.R)
+    # 3 - Examples
+  </h5>
+</p>
 
 <h2>
   ## Heading 1 - NavigatoR ------------------------------------------------------------------------------
