@@ -14,13 +14,13 @@
 
 <p>
   <h5>
-    # 1 - NavigatoR
-    # 2 - Scripts
-    ## 2.a - Main Script (main.R)
-    ## 2.b - Preprocessing Script (R/01_preprocessing.R)
-    ## 2.c - Calculation Script (R/02_calculation.R)
-    ## 2.d - Visualization Script (R/03_visualization.R)
-    # 3 - Examples
+    # 1 - NavigatoR <br></br>
+    # 2 - Scripts <br></br>
+    ## 2.a - Main Script (main.R) <br></br>
+    ## 2.b - Preprocessing Script (R/01_preprocessing.R) <br></br>
+    ## 2.c - Calculation Script (R/02_calculation.R) <br></br>
+    ## 2.d - Visualization Script (R/03_visualization.R) <br></br>
+    # 3 - Examples <br></br>
   </h5>
 </p>
 
