@@ -22,10 +22,8 @@
   1 - NavigatoR  <br> </br>
 </h2>
 
-<h5>
-  This is the NavigatoR package. 
-</h5>
 <h6>
+  This is the NavigatoR package. 
   It calculates and plots the distance between 2 locations within the Netherlands. <br> </br>
   The authors wish you a lot of fun with the NavigatoR! <br> </br>
 </h6>
