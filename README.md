@@ -8,7 +8,7 @@
   Contents
 </h2>
 
-<h5>
+<h5> </b>
   1 - NavigatoR <br> </br>
   2 - Scripts <br> </br>
   2.a - Main Script (main.R) <br> </br>
