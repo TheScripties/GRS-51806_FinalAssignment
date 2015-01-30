@@ -23,7 +23,7 @@
 </h2>
 
 <h5>
-  This is the NavigatoR package. <br> </br>
+  This is the NavigatoR package. 
 </h5>
 <h6>
   It calculates and plots the distance between 2 locations within the Netherlands. <br> </br>
