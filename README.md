@@ -1,42 +1,32 @@
-<p>
-  <h5>
-    GRS-51806_FinalAssignment - NavigatoR <br> </br>
-    Authors: Michiel Blok and Madeleine van Winkel <br> </br>
-    Created on Friday January 30 2015 <br> </br>
-  </h5>
-</p>
+<h5>
+  GRS-51806_FinalAssignment - NavigatoR <br> </br>
+  Authors: Michiel Blok and Madeleine van Winkel <br> </br>
+  Created on Friday January 30 2015 <br> </br>
+</h5>
 
-<p>
-  <h2>
+<h2>
   Contents
-  </h2>
-</p>
+</h2>
 
-<p>
-  <h5>
-    1 - NavigatoR <br> </br>
-    2 - Scripts <br> </br>
-    2.a - Main Script (main.R) <br> </br>
-    2.b - Preprocessing Script (R/01_preprocessing.R) <br> </br>
-    2.c - Calculation Script (R/02_calculation.R) <br> </br>
-    2.d - Visualization Script (R/03_visualization.R) <br> </br>
-    3 - Examples <br> </br>
-  </h5>
-</p>
+<h5>
+  1 - NavigatoR <br> </br>
+  2 - Scripts <br> </br>
+  2.a - Main Script (main.R) <br> </br>
+  2.b - Preprocessing Script (R/01_preprocessing.R) <br> </br>
+  2.c - Calculation Script (R/02_calculation.R) <br> </br>
+  2.d - Visualization Script (R/03_visualization.R) <br> </br>
+  3 - Examples <br> </br>
+</h5>
 
-<p>
-  <h2>
-    1 - NavigatoR  <br> </br>
-  </h2>
-</p>
+<h2>
+  1 - NavigatoR  <br> </br>
+</h2>
 
-<p>
-  <h5>
-    This is the NavigatoR package. <br> </br>
-    It calculates and plots the distance between 2 locations within the Netherlands. <br> </br>
-    The authors wish you a lot of fun with the NavigatoR! <br> </br>
-  </h5>
-</p>
+<h5>
+  This is the NavigatoR package. <br> </br>
+  It calculates and plots the distance between 2 locations within the Netherlands. <br> </br>
+  The authors wish you a lot of fun with the NavigatoR! <br> </br>
+</h5>
 
 <h2>
   2 - Scripts <br> </br>
