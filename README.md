@@ -9,13 +9,13 @@
 </h2>
 
 <h5>
-  # Heading 1 - NavigatoR
-  # Heading 2 - Scripts
-  ## Heading 2.a - Main Script (main.R)
-  ## Heading 2.b - Preprocessing Script (R/01_preprocessing.R)
-  ## Heading 2.c - Calculation Script (R/02_calculation.R)
-  ## Heading 2.d - Visualization Script (R/03_visualization.R)
-  ## Heading 3 - Examples
+  # 1 - NavigatoR
+  # 2 - Scripts
+  ## 2.a - Main Script (main.R)
+  ## 2.b - Preprocessing Script (R/01_preprocessing.R)
+  ## 2.c - Calculation Script (R/02_calculation.R)
+  ## 2.d - Visualization Script (R/03_visualization.R)
+  # 3 - Examples
 </h5>
 
 <h2>
