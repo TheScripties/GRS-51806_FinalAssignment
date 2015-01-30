@@ -1,8 +1,8 @@
 <p>
   <h5>
-    # GRS-51806_FinalAssignment - NavigatoR <br></br>
-    # Authors: Michiel Blok and Madeleine van Winkel <br></br>
-    # Created on Friday January 30 2015 <br></br>
+    GRS-51806_FinalAssignment - NavigatoR <br></br>
+    Authors: Michiel Blok and Madeleine van Winkel <br></br>
+    Created on Friday January 30 2015 <br></br>
   </h5>
 </p>
 
