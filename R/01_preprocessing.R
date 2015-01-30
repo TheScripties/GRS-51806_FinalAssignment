@@ -9,7 +9,18 @@
 # Preprocessing function --------------------------------------------------
 preprocessing <- function(placeStart, streetStart, placeDest, streetDest) {
 
-  # Reference to the data folder --------------------------------------------
+  # Creation and reference to data folder -----------------------------------
+  # Get working directory
+  mainDir <- getwd()
+  
+  # Create data folder if it does not exist
+  subDirData <- "data" 
+  if (file.exists(subDirData)){
+  } else {
+    dir.create(file.path(mainDir, subDirData))
+  }
+  
+  # Reference to data folder
   datdir <- "data"
   
   # Download and unzip the data ---------------------------------------------
