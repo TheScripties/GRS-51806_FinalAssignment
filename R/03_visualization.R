@@ -33,6 +33,6 @@ visualization <- function (navigatoR.coords, navigatoR.calculation) {
   }
   
   # Plot KML in Google Earth ------------------------------------------------
-  plotKML(navigatoR.coords$coordsStartDest, folder.name = "output", file.name = "NavigatoR.kml", navigatoR.coords$coordsStartDest_names = c("Start", "Destination"), shape = "http://maps.google.com/mapfiles/kml/pal2/icon15.png", open.kml = TRUE)
+  plotKML(navigatoR.coords$coordsStartDest, folder.name = "output", file.name = "NavigatoR.kml", points_names = c("Start", "Destination"), shape = "http://maps.google.com/mapfiles/kml/pal2/icon15.png", open.kml = TRUE)
   #writeOGR(points, file.path("output", "navigator.kml"), "NavigatoR", driver = "KML", overwrite_layer = TRUE)
 }
