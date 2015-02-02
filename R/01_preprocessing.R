@@ -55,16 +55,10 @@ preprocessing <- function(placeStart, streetStart, placeDest, streetDest) {
   coordsStart <- SpatialPointsDataFrame(coordsdfStart, coordsdfStart, proj4string = CRS(as.character(NA)), match.ID = TRUE, bbox = NULL)
   coordsDest <- SpatialPointsDataFrame(coordsdfDest, coordsdfDest, proj4string = CRS(as.character(NA)), match.ID = TRUE, bbox = NULL)
   
-  # Create SpatialPointDataFrame of start and destination points combined
-  XY_StartDest <- c(X_Start, X_Dest, Y_Start, Y_Dest)
-  XY_StartDestMatrix <- matrix(XY_StartDest, ncol = 2)
-  XY_StartDestdf <- data.frame(XY_StartDestMatrix, row.names = c("Start", "Destination"))
-  coordsStartDest <- SpatialPointsDataFrame(XY_StartDestdf, XY_StartDestdf, proj4string = CRS(as.character(NA)), match.ID = TRUE, bbox = NULL)
-  
   # Return data about the start and destination point -----------------------
   navigatoR.coords <- c("placeStart" = placeStart, "streetStart" = streetStart, "placeDest" =  placeDest, "streetDest" = streetDest, 
                         "X_Start" = X_Start, "Y_Start" = Y_Start, "X_Dest" = X_Dest, "Y_Dest" = Y_Dest, 
-                        "coordsStart" = coordsStart, "coordsDest" = coordsDest, "coordsStartDest" = coordsStartDest, 
+                        "coordsStart" = coordsStart, "coordsDest" = coordsDest, 
                         "infra" = infra)
   return (navigatoR.coords)
 }
