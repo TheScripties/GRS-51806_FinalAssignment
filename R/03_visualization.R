@@ -53,6 +53,5 @@ visualization <- function (navigatoR.coords, navigatoR.calculation) {
     plotKML(navigatoR.coords$coordsStartDest["Start",], file.path("output", "NavigatoRStart.kml"), points_names = "Start", shape = "http://maps.google.com/mapfiles/kml/pal2/icon15.png", open.kml = TRUE)
     plotKML(navigatoR.coords$coordsStartDest["Destination",], file.path("output", "NavigatoRDestination.kml"), points_names = "Destination", shape = "http://maps.google.com/mapfiles/kml/pal2/icon15.png", open.kml = TRUE)
     plotKML(navigatoR.coords$coordsStartDest, file.path("output", "NavigatoR.kml"), points_names = c(paste(streetStart, placeStart) ,paste(streetDest, placeDest) ), shape = "http://maps.google.com/mapfiles/kml/pal2/icon15.png", open.kml = TRUE)
-    #plotKML(navigatoR.coords$coordsStartDest, folder.name = paste(subDirOutput, "/"), file.name = paste("NavigatoR", ".kml", sep = ""), points_names = c("Start", "Destination"), shape = "http://maps.google.com/mapfiles/kml/pal2/icon15.png", open.kml = TRUE, colour ="yellow")
   }
 }
