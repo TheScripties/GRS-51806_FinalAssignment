@@ -10,17 +10,16 @@
 
 
 # Import packages ---------------------------------------------------------
-
 # Install packages if needed
-if (!require(utils)){print("utils package is not installed. Installing it now.");install.packages(utils, dependencies = TRUE)}
-if (!require(base)){print("base package is not installed. Installing it now.");install.packages(base, dependencies = TRUE)}
-if (!require(graphics)){print("graphics package is not installed. Installing it now.");install.packages(graphics, dependencies = TRUE)}
-if (!require(downloader)){print("downloader package is not installed. Installing it now.");install.packages(downloader, dependencies = TRUE)}
-if (!require(plotKML)){print("plotKML package is not installed. Installing it now.");install.packages(plotKML, dependencies = TRUE)}
-if (!require(raster)){print("raster package is not installed. Installing it now.");install.packages(raster, dependencies = TRUE)}
-if (!require(rgdal)){print("rgdal package is not installed. Installing it now.");install.packages(rgdal, dependencies = TRUE)}
-if (!require(rgeos)){print("geos package is not installed. Installing it now.");install.packages(rgeos, dependencies = TRUE)}
-if (!require(sp)){print("Sp package is not installed. Installing it now.");install.packages(sp, dependencies = TRUE)}
+if (!require(utils)){print("utils package is not installed. Installing it now.");install.packages("utils", dependencies = TRUE)}
+if (!require(base)){print("base package is not installed. Installing it now.");install.packages("base", dependencies = TRUE)}
+if (!require(graphics)){print("graphics package is not installed. Installing it now.");install.packages("graphics", dependencies = TRUE)}
+if (!require(downloader)){print("downloader package is not installed. Installing it now.");install.packages("downloader", dependencies = TRUE)}
+if (!require(plotKML)){print("plotKML package is not installed. Installing it now.");install.packages("plotKML", dependencies = TRUE)}
+if (!require(raster)){print("raster package is not installed. Installing it now.");install.packages("raster", dependencies = TRUE)}
+if (!require(rgdal)){print("rgdal package is not installed. Installing it now.");install.packages("rgdal", dependencies = TRUE)}
+if (!require(rgeos)){print("geos package is not installed. Installing it now.");install.packages("rgeos", dependencies = TRUE)}
+if (!require(sp)){print("Sp package is not installed. Installing it now.");install.packages("sp", dependencies = TRUE)}
 
 # Load packages
 library(utils)

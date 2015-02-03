@@ -11,20 +11,20 @@
 # Visualization function --------------------------------------------------
 # Alternative function when Google Earth is not installed, KML-file can be generated without using Google Earth
 visualization <- function (navigatoR.coords, navigatoR.calculation) {
-
+  
   # Plot map with start and destination coordinates -------------------------
   plot(navigatoR.calculation$infraClip, main = "NavigatoR", xlab = "Longitude", ylab = "Latitude", cex = 2, col = "gray"(0.7), axes = TRUE)
-  plot(navigatoR.coords$coordsStart, add = TRUE, col = "purple", lwd = 10)
-  plot(navigatoR.coords$coordsDest, add = TRUE, col = "darkgreen", lwd = 10)
+  plot(navigatoR.coords$coordsStartDest["Start",], add = TRUE, col = "purple", lwd = 10)
+  plot(navigatoR.coords$coordsStartDest["Destination",], add = TRUE, col = "darkgreen", lwd = 10)
   box()
   grid()
   scalebar(d = round(abs(navigatoR.calculation$startToDestKm)), type = "line", lwd = 3, below = "kilometer", col = "black")
   legend("bottomright", legend = round(navigatoR.calculation$startToDestKm, digits = 3), title = "Distance (km)")
-
+  
   # Add labels for start and destination point ------------------------------
   text(navigatoR.coords$X_Start, navigatoR.coords$Y_Start + navigatoR.calculation$Y_CoordsPlotText, labels = "Start", lwd = 35, col = "purple")
   text(navigatoR.coords$X_Dest, navigatoR.coords$Y_Dest + navigatoR.calculation$Y_CoordsPlotText, labels = "Destination", lwd = 35, col = "darkgreen")
-
+  
   # Plot growing arrow on map -----------------------------------------------
   for (i in 1:10) {
     X_Temp <- navigatoR.coords$X_Start + ((i / 10) * (navigatoR.coords$X_Dest - navigatoR.coords$X_Start))
@@ -33,6 +33,26 @@ visualization <- function (navigatoR.coords, navigatoR.calculation) {
   }
   
   # Plot KML in Google Earth ------------------------------------------------
-  plotKML(navigatoR.coords$coordsStartDest, folder.name = "output", file.name = "NavigatoR.kml", points_names = c("Start", "Destination"), shape = "http://maps.google.com/mapfiles/kml/pal2/icon15.png", open.kml = TRUE)
-  #writeOGR(points, file.path("output", "navigator.kml"), "NavigatoR", driver = "KML", overwrite_layer = TRUE)
+  # Get working directory
+  mainDir <- getwd()
+  
+  # Reference to output folder
+  subDirOutput <- "output" 
+  
+  # Create output folder if it does not exist
+  if (file.exists(subDirOutput)){
+  } else {
+    dir.create(file.path(mainDir, subDirOutput))
+  }
+  
+  # Plotting of start and destination in Google Earth
+  # Alternative method for creating a KML-file for when plotKML does not function, this can also be used if Google Earth is not installed
+  if (!require(plotKML)) {
+    writeOGR(navigatoR.coords$coordsStartDest, file.path(subDirOutput, "NavigatoR.kml"), "NavigatoR", driver = "KML", overwrite_layer = TRUE)
+  } else{
+    plotKML(navigatoR.coords$coordsStartDest["Start",], file.path("output", "NavigatoRStart.kml"), points_names = "Start", shape = "http://maps.google.com/mapfiles/kml/pal2/icon15.png", open.kml = TRUE)
+    plotKML(navigatoR.coords$coordsStartDest["Destination",], file.path("output", "NavigatoRDestination.kml"), points_names = "Destination", shape = "http://maps.google.com/mapfiles/kml/pal2/icon15.png", open.kml = TRUE)
+    plotKML(navigatoR.coords$coordsStartDest, file.path("output", "NavigatoR.kml"), points_names = c(paste(streetStart, placeStart) ,paste(streetDest, placeDest) ), shape = "http://maps.google.com/mapfiles/kml/pal2/icon15.png", open.kml = TRUE)
+    #plotKML(navigatoR.coords$coordsStartDest, folder.name = paste(subDirOutput, "/"), file.name = paste("NavigatoR", ".kml", sep = ""), points_names = c("Start", "Destination"), shape = "http://maps.google.com/mapfiles/kml/pal2/icon15.png", open.kml = TRUE, colour ="yellow")
+  }
 }

@@ -8,24 +8,27 @@
 
 # Preprocessing function --------------------------------------------------
 preprocessing <- function(placeStart, streetStart, placeDest, streetDest) {
-
+  
   # Creation and reference to data folder -----------------------------------
   # Get working directory
   mainDir <- getwd()
   
-  # Create data folder if it does not exist
+  # Reference to data folder
   subDirData <- "data" 
+  
+  # Create data folder if it does not exist
   if (file.exists(subDirData)){
   } else {
     dir.create(file.path(mainDir, subDirData))
   }
-  
-  # Reference to data folder
-  datdir <- "data"
-  
+
   # Download and unzip the data ---------------------------------------------
-  download(url = "http://download.geofabrik.de/europe/netherlands-latest.shp.zip" , destfile = "data./netherlands-latest.shp.zip", quiet = TRUE, method = "auto")
-  unzip(zipfile = "data./netherlands-latest.shp.zip", exdir = paste(datdir, ".", sep = "") , overwrite = TRUE)
+  if (!require(downloader)) {
+    download.file("http://download.geofabrik.de/europe/netherlands-latest.shp.zip", destfile = "data./netherlands-latest.shp.zip", "auto", quiet = TRUE, mode = "w")
+  } else {
+    download(url = "http://download.geofabrik.de/europe/netherlands-latest.shp.zip" , destfile = "data./netherlands-latest.shp.zip", quiet = TRUE, method = "auto")
+  }
+  unzip(zipfile = "data./netherlands-latest.shp.zip", exdir = paste(subDirData, ".", sep = "") , overwrite = TRUE)
   GADM <- raster::getData("GADM", country = "NLD", level = 2, path = "data")
   
   # Read infrastructure data ------------------------------------------------
@@ -45,20 +48,24 @@ preprocessing <- function(placeStart, streetStart, placeDest, streetDest) {
   
   X_Start <- coordinates(streetStartData)[[1]][[1]][1,1]
   Y_Start <- coordinates(streetStartData)[[1]][[1]][1,2]
-  coordsdfStart <- data.frame(X_Start, Y_Start)
   
   X_Dest <- coordinates(streetDestData)[[1]][[1]][1,1]
   Y_Dest <- coordinates(streetDestData)[[1]][[1]][1,2]
-  coordsdfDest <- data.frame(X_Dest, Y_Dest)
-  
+
   # Create SpatialPointDataFrames of start and destination point ------------
-  coordsStart <- SpatialPointsDataFrame(coordsdfStart, coordsdfStart, proj4string = CRS(as.character(NA)), match.ID = TRUE, bbox = NULL)
-  coordsDest <- SpatialPointsDataFrame(coordsdfDest, coordsdfDest, proj4string = CRS(as.character(NA)), match.ID = TRUE, bbox = NULL)
+  XY_StartDest <- c(X_Start, X_Dest, Y_Start, Y_Dest)
+  XY_StartDestMatrix <- matrix(XY_StartDest, ncol = 2)
+  coordsdfStartDest <- data.frame(XY_StartDestMatrix, row.names = c("Start", "Destination"))
+  names(coordsdfStartDest) <- c("X", "Y")
+  
+  # Add RD projection
+  projectionRD <- CRS("+proj=longlat +datum=WGS84")
+  coordsStartDest <- SpatialPointsDataFrame(coordsdfStartDest, coordsdfStartDest, proj4string = projectionRD, match.ID = TRUE, bbox = NULL)
   
   # Return data about the start and destination point -----------------------
   navigatoR.coords <- c("placeStart" = placeStart, "streetStart" = streetStart, "placeDest" =  placeDest, "streetDest" = streetDest, 
                         "X_Start" = X_Start, "Y_Start" = Y_Start, "X_Dest" = X_Dest, "Y_Dest" = Y_Dest, 
-                        "coordsStart" = coordsStart, "coordsDest" = coordsDest, 
+                        "coordsStartDest" = coordsStartDest, 
                         "infra" = infra)
   return (navigatoR.coords)
 }
